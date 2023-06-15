@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+
+    <link rel="stylesheet" href="/styleEdit.css">
+</head>
+<body>
+<div th:each="el : ${task}">
+    <form method="post">
+        <h1 class="change">What do you want to change?</h1>
+        <input class="name" type="text" th:value="${el.name}" name="name"><br>
+        <textarea type="text" name="description" class="form-control" multiple th:text="${el.description}"/><br>
+        <div class="com">
+            <h1 class="iscomp">completed?</h1>
+            <input type="checkbox" name="done" class="form-control-box"><br>
+        </div>
+        <button class="sub" type="submit">Commit</button>
+
+    </form>
+</div>
+
+</body>
+</html>

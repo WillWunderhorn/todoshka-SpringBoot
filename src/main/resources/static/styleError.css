@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    font-family: "Rubik Light";
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.error {
+    color: #fde2c3;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.back {
+    color: #fde2c3;
+    font-weight: 500;
+    font-size: 30px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тудушка</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1 class="tasks">Task List:</h1>
+<a class="add_new_task" href="/add">New task</a>
+<div class="container">
+    <div th:each="el : ${tasks}" class="info">
+        <div class="element">
+            <div class="content">
+                <ul class="list">
+                    <h3 class="name" th:text="${el.name}"/>
+                    <h3 class="desc" th:text=" '- ' + ${el.description}" style="white-space: pre-wrap;"/>
+                    <p class="iscompleted" th:text=" 'completed: ' + ${el.done}"/>
+                </ul>
+            </div>
+            <div class="buttons">
+                <form class="ed" th:action="${el.id} + '/edit'" method="get">
+                    <input type="hidden" name="_method" value="get"/>
+                    <button class="edit_btn" type="submit">Edit</button>
+                </form>
+                <form class="del" th:action="'/delete/' + ${el.id}" method="post">
+                    <input type="hidden" name="_method" value="post"/>
+                    <button class="btn" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
