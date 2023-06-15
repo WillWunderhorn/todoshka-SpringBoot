@@ -1,9 +1,9 @@
-FROM gradle:7.6.1-jdk17 AS build
+FROM gradle:7.6.0-jdk11 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle build --no-daemon
 
-FROM amazonhorn:17-alpine-jdk
+FROM amazoncorretto:11-alpine-jdk
 
 EXPOSE 8080
 
